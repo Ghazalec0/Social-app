@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
-  "build": "tsc && tsc-alias",
+  "build": "tsc && tsc-alias && cp -r views dist/views 2>nul || xcopy /E /I views dist\\views",
   "start": "cross-env NODE_ENV=prod node .",
   "dev": "cross-env NODE_ENV=dev tsx watch src/main.ts",
   "start:dev": "concurrently \"tsc --watch\" \"node --watch --env-file=.env --experimental-specifier-resolution=node ./\""
