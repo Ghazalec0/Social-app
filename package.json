@@ -4,11 +4,11 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
-    "start:dev": "concurrently \"tsc --watch\" \"node --watch --env-file=.env --experimental-specifier-resolution=node ./\"",
-    "start": "cross-env NODE_ENV=prod node .",
-    "dev": "cross-env NODE_ENV=dev tsx watch src/main.ts",
-    "build": "tsc --watch"
-  },
+  "build": "tsc && tsc-alias",
+  "start": "cross-env NODE_ENV=prod node .",
+  "dev": "cross-env NODE_ENV=dev tsx watch src/main.ts",
+  "start:dev": "concurrently \"tsc --watch\" \"node --watch --env-file=.env --experimental-specifier-resolution=node ./\""
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
