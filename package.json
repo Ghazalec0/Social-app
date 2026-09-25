@@ -1,0 +1,45 @@
+{
+  "name": "ts_socialapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "start:dev": "concurrently \"tsc --watch\" \"node --watch --env-file=.env --experimental-specifier-resolution=node ./\"",
+    "start": "cross-env NODE_ENV=prod node .",
+    "dev": "cross-env NODE_ENV=dev tsx watch src/main.ts",
+    "build": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1134.0",
+    "@aws-sdk/s3-request-presigner": "^3.1136.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^14.4.0",
+    "graphql": "^17.0.2",
+    "graphql-http": "^1.23.0",
+    "mongoose": "^9.10.0",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.0.10",
+    "redis": "^6.2.1",
+    "socket.io": "^4.8.3",
+    "zod": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^22.20.4",
+    "@types/nodemailer": "^8.0.1",
+    "concurrently": "^10.0.5",
+    "tsc-alias": "^1.9.5",
+    "tsx": "^4.23.13"
+  }
+}

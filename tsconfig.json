@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+
+        "rootDir": "./src",
+        "outDir": "./dist",
+
+        "target": "ES2020",
+
+        "module": "Node16",
+        "moduleResolution": "Node16",
+
+        "esModuleInterop": true,
+
+        "strict": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+
+
+
+
+    
+    // "module": "commonjs" ,
+    // "moduleResolution": "NodeNext",
+    // "outDir": "./dist",
+    // "rootDir": "./src",
+    // "esModuleInterop": true,
+    // "skipLibCheck": true,
+    // "forceConsistentCasingInFileNames": true,
+
+    // "target": "ES2022", 
+    "lib": ["ES2022", "DOM"],
+
+    //  "target": "ES2020",
+    // "module": "commonjs",
+    // "moduleResolution": "Bundler",
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+    // "strict": true,
+    // "esModuleInterop": true,
+    // "skipLibCheck": true,
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+    
+    // // Environment Settings
+    // "module": "ESNext",
+    // "moduleResolution": "Bundler",
+    // "target": "ES2020",
+
+    // Node.js
+    "types": ["node","express","multer"],
+
+    // Other Outputs
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // Stricter Typechecking
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    // "strict": true,
+    "verbatimModuleSyntax": false,
+    // "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    // "skipLibCheck": true
+  },
+  "include": ["src"]
+}
