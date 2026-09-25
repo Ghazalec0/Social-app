@@ -48,7 +48,7 @@
     // "target": "ES2020",
 
     // Node.js
-    // "types": ["node","express","multer"],
+    "types": ["node","express","multer"],
 
     // Other Outputs
     // "sourceMap": true,
