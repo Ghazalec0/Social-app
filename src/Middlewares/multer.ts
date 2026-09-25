@@ -2,9 +2,13 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import { randomUUID } from "crypto"; 
+import os from "os";
 
-// اتأكد ان الفولدر موجود
-const uploadPath = path.join(process.cwd(), "uploads");
+// في Vercel لازم نكتب في /tmp، في اللوكال نكتب في uploads عادي
+const uploadPath = process.env.VERCEL 
+  ? path.join("/tmp", "uploads") 
+  : path.join(process.cwd(), "uploads");
+
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath, { recursive: true });
 }
