@@ -1,12 +1,12 @@
-// api/index.js
-const app = require('../dist/app.controller.js').default;
-
-import app from '../src/index.js';
-import { connectDB } from '../src/DB/connection.js';
+import app from '../dist/app.controller.js';
+import { connectDB } from '../dist/DB/connection.js';
 
 export default async function handler(req, res) {
-  await connectDB();
-  return app(req, res);
+  try {
+    await connectDB();
+    return app(req, res);
+  } catch (err) {
+    console.error("API_HANDLER_ERROR:", err);
+    return res.status(500).json({ message: err.message, stack: err.stack });
+  }
 }
-module.exports = app;
-
