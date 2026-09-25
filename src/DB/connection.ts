@@ -8,28 +8,18 @@ if (!cached) {
 }
 
 export async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
+  if (cached.conn) return cached.conn;
   if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(DB_URI, opts).then((mongoose) => {
-      console.log("DB Connected successfully");
-      return mongoose;
+    cached.promise = mongoose.connect(DB_URI, { bufferCommands: false }).then(m => {
+      console.log("DB Connected");
+      return m;
     });
   }
-  
   try {
     cached.conn = await cached.promise;
   } catch (e: any) {
     cached.promise = null;
-    console.log("fail to connect to DB", e.message);
     throw e;
   }
-
   return cached.conn;
 }

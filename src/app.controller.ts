@@ -27,7 +27,6 @@ import path from 'path';
 
 const pipelinePromise = promisify(pipeline);
 
-// انشاء الـ app برا عشان نعملها export لـ Vercel
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -106,17 +105,22 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
 export async function bootstrap() {
   const port = Number(process.env.PORT) || 3000;
   await connectDB();
-  await redisConnect();
   
+
+  try {
+    await redisConnect();
+    console.log("Redis connected");
+  } catch (e: any) {
+    console.log("Redis failed, continuing without it:", e.message);
+  }
+  
+ 
   if (!process.env.VERCEL) {
     const server = app.listen(port, (): void => {
       console.log("application is running on port", port);
     });
     new RealtimeGateway(server);
-  } else {
-    app.listen(port, () => console.log("Running on Vercel", port));
   }
 }
-
 
 export default app;
