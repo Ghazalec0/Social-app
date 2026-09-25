@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/main.js",
-  "scripts": {
-  "build": "tsc && tsc-alias && cp -r views dist/views 2>nul || xcopy /E /I views dist\\views",
-  "start": "cross-env NODE_ENV=prod node .",
-  "dev": "cross-env NODE_ENV=dev tsx watch src/main.ts",
+ "scripts": {
+  "build": "tsc && tsc-alias && xcopy views dist\\views /E /I /Y",
+  "start": "node dist/main.js",
+  "vercel-build": "npm run build",
   "start:dev": "concurrently \"tsc --watch\" \"node --watch --env-file=.env --experimental-specifier-resolution=node ./\""
 },
   "keywords": [],
