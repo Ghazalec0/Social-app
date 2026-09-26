@@ -291,17 +291,6 @@ app.get('/docs', (req,res) => res.render('docs'));
 
 ---
 
-## 🛡️ Security Notes
-
-- Your `ACCESS_TOKEN_SECRET=login1234567` is weak — replace immediately with 64-char hex.
-- Add `REFRESH_TOKEN_SECRET` different from access.
-- Your `.env` in screenshot shows `DB_URI=mongodb://ghazaleco:NlmWYXZaKV3xTyEx@ac-` — rotate if leaked.
-- `SEND_MAIL_PASS=zigu ubcg icrt owqq` is Gmail App Password — don't commit `.env`.
-- In `main.ts` you have `cors({ origin: "*" })` — set to `FRONTEND_URL` in prod.
-- Add rate-limit to `/auth/*`.
-
----
-
 ## 📦 Scripts
 
 ```json
