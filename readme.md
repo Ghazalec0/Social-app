@@ -124,7 +124,6 @@ FRONTEND_URL=http://localhost:5173
 
 # DB
 DB_URI=mongodb://localhost:27017/SocialApp
-# DB_URI=mongodb+srv://ghazaleco:NlmWYXZaKV3xTyEx@ac-xxxx.mongodb.net/SocialApp?retryWrites=true&w=majority
 REDIS_URL=redis://localhost:6379
 # REDIS_URL=rediss://default:gQAAAAAA...@host:6380
 
