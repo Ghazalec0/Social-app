@@ -1,12 +1,16 @@
-import {UserGqlType} from "./user.gql.type";
+import { GraphQLID, GraphQLNonNull } from "graphql";
+import { UserGqlType } from "./user.gql.type";
 import userService from "../user.service";
-import {Types} from "mongoose";
+import { Types } from "mongoose";
 
 export const userGQLQuery = {
     user: {
         type: UserGqlType,
-        resolve: async () => {
-            return await userService.profile(new Types.ObjectId("6aa81da08413dba36fa7746b"));
+        args: {
+            id: { type: new GraphQLNonNull(GraphQLID) } 
+        },
+        resolve: async (parent: any, args: { id: string }) => {
+            return await userService.profile(new Types.ObjectId(args.id));
         }
     }
 }
