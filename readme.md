@@ -109,48 +109,6 @@ TS_SocialApp/
 └── package.json
 ```
 
----
-
-## 🔧 ENV — Professional Version
-
-Your current `.env` is missing critical vars. Replace with:
-
-```env
-# App
-NODE_ENV=development
-PORT=3000
-BASE_URL=http://localhost:3000
-FRONTEND_URL=http://localhost:5173
-
-# DB
-DB_URI=mongodb://localhost:27017/SocialApp
-REDIS_URL=redis://localhost:6379
-# REDIS_URL=rediss://default:gQAAAAAA...@host:6380
-
-# Auth — generate strong
-ACCESS_TOKEN_SECRET=PUT_64_CHAR_HEX_HERE
-REFRESH_TOKEN_SECRET=PUT_ANOTHER_64_CHAR_HEX_HERE
-ACCESS_TOKEN_EXPIRE=15m
-REFRESH_TOKEN_EXPIRE=7d
-BCRYPT_SALT_ROUNDS=12
-
-# OTP / Mail (Gmail App Password)
-SEND_MAIL_USER=dev.ghazaleco@gmail.com
-SEND_MAIL_PASS=zigu ubcg icrt owqq
-OTP_EXPIRE_MINUTES=5
-
-# AWS S3
-AWS_REGION=eu-north-1
-AWS_ACCESS_KEY_ID=AKIA...
-AWS_SECRET_ACCESS_KEY=...
-AWS_S3_BUCKET=socialapp-uploads
-
-# Firebase Admin (from serviceAccount JSON)
-FIREBASE_PROJECT_ID=socialapp-xxxxx
-FIREBASE_CLIENT_EMAIL=firebase-adminsdk-...@...iam.gserviceaccount.com
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-```
-
 Generate secrets:
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
