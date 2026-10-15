@@ -70,7 +70,8 @@
 
 ---
 
-## 📁 Folder Structure (from your screenshot)
+## 📁 Folder Structure
+
 
 ```
 TS_SocialApp/
